@@ -11,10 +11,10 @@ use function Laravel\Prompts\select;
 use App\Models\Post;
 
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
-//
+Route::get('/', function () {
+    return view('welcome');
+});
+
 //Route::get('/about', function () {
 //    return "About Page";
 //});
@@ -258,3 +258,7 @@ Route::Get('/setname',function(){
     $user->name = "william";
     $user->save();
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
